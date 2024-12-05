@@ -6,8 +6,8 @@ string link = "https://www.zara.com/tr/en/vibrant-leather-warm-edp-100-ml---3-38
 driver.Navigate().GoToUrl(link);
 IWebElement stockElement = driver.FindElement(By.ClassName("product-detail-show-similar-products__action-tip"));
 string text = stockElement.Text;
-string dateTime = DateTime.Now.ToString("MM/dd/yyy HH:mm:ss");
+string time = DateTime.Now.ToString("MM/dd/yyy HH:mm:ss");
 string filePath = "C:\\Users\\murat\\Desktop\\seleniumOutput.txt";
-string outputText = $"[{dateTime}] Stock = {text}";
+string outputText = $"[{time}] Stock = {text}";
 File.AppendAllText(filePath, outputText + Environment.NewLine);
 driver.Quit();
